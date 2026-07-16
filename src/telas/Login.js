@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {View,Text,TextInput, TouchableOpacity, StyleSheet, Alert} from 'react-native';
+import {View,Text,TextInput, TouchableOpacity, StyleSheet, Alert, Image} from 'react-native';
 
 export default function Login({ navigation }) {
 
@@ -17,22 +17,13 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.fundo}>
+    <Image source={require('./logo.png')} style={styles.imagem} />
       <View style={styles.cartao}>
-        <Text style={styles.titulo}>ORTNOTE</Text>
-
-        <View style={styles.abas}>
-          <TouchableOpacity style={styles.abaAtiva}>
-            <Text style={styles.abaAtivaTexto}>Entrar</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.abaInativa}>
-            <Text style={styles.abaInativaTexto}>Cadastrar</Text>
-          </TouchableOpacity>
-        </View>
 
         <Text style={styles.labelCampo}>EMAIL</Text>
         <TextInput
           style={styles.input}
-          placeholder="seu@email.com"
+          placeholder="nome.sobrenome@ort.org.br"
           placeholderTextColor="#b89a30"
           keyboardType="email-address"
           autoCapitalize="none"
@@ -61,9 +52,10 @@ export default function Login({ navigation }) {
 const styles = StyleSheet.create({
   fundo: {
     flex: 1,
-    backgroundColor: '#8B3FBE',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'relative',  
   },
   labelTopo: {
     position: 'absolute',
@@ -73,71 +65,42 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   cartao: {
-    backgroundColor: '#F5B800', 
-    borderRadius: 24,
+    backgroundColor: '#f5c534', 
+    borderTopLeftRadius: 60,
+    borderTopRightRadius: 60,
     padding: 28,
-    width: '82%',
-  },
-  titulo: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 18,
-    color: '#1a1a1a',
-    letterSpacing: 2,
-  },
-  abas: {
-    flexDirection: 'row',
-    marginBottom: 20,
-    marginLeft: 30,
-    gap: 8,
-  },
-  abaAtiva: {
-    backgroundColor: '#1a1a1a',
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-  },
-  abaAtivaTexto: {
-    color: '#fff',
-    fontWeight: 'bold',
-    width: 80,
-    marginLeft: 30
-  },
-  abaInativa: {
-    backgroundColor: '#e0c060',
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    borderRadius: 8
-  },
-  abaInativaTexto: {
-    color: '#555',
-    width: 80,
-    marginLeft: 30
+    width: '100%',
+    height: '85%',
+    marginTop: 160,
+    // Sombra iOS
+    shadowColor: '#000000',
+    shadowOpacity: 0.8,
+    shadowRadius: 8,
+    // Sombra Android
+    elevation: 9,
   },
   labelCampo: {
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: 'bold',
     color: '#5a3e00',
-    marginBottom: 4,
-    marginTop: 8,
+    marginTop: 40,
     letterSpacing: 1,
   },
   input: {
     backgroundColor: '#d4a800',
     borderRadius: 10,
     paddingHorizontal: 14,
-    paddingVertical: 10,
+    paddingVertical: 20,
     fontSize: 15,
     color: '#fff',
     marginBottom: 4,
   },
   botao: {
-    backgroundColor: '#1a1200',
+    backgroundColor: '#8c06da',
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: '90%',
   },
   botaoTexto: {
     color: '#fff',
@@ -145,4 +108,14 @@ const styles = StyleSheet.create({
     fontSize: 15,
     letterSpacing: 1,
   },
+  imagem: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    marginLeft: 80,
+    width: 500,
+    height: 160,
+    alignSelf: 'center',   
+    resizeMode: 'contain',
+},
 });
