@@ -66,24 +66,25 @@ const styles = StyleSheet.create({
   },
   cartao: {
     backgroundColor: '#f5c534', 
-    borderTopLeftRadius: 60,
-    borderTopRightRadius: 60,
+    borderTopLeftRadius: 90,
+    borderTopRightRadius: 90,
     padding: 28,
     width: '100%',
     height: '85%',
     marginTop: 160,
-    // Sombra iOS
+    //IOS
     shadowColor: '#000000',
     shadowOpacity: 0.8,
     shadowRadius: 8,
-    // Sombra Android
+    //Android
     elevation: 9,
   },
   labelCampo: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: '#5a3e00',
+    color: '#805701',
     marginTop: 40,
+    marginBottom: 7,
     letterSpacing: 1,
   },
   input: {
@@ -98,9 +99,9 @@ const styles = StyleSheet.create({
   botao: {
     backgroundColor: '#8c06da',
     borderRadius: 12,
-    paddingVertical: 14,
+    paddingVertical: 20,
     alignItems: 'center',
-    marginTop: '90%',
+    marginTop: '85%',
   },
   botaoTexto: {
     color: '#fff',
