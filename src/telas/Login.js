@@ -8,11 +8,11 @@ export default function Login({ navigation }) {
 
   function Login() {
     if (email === '' || senha === '') {
-      Alert.alert('Atenção', 'Preencha o email e a senha.');
+      alert('Atenção, preencha o email e a senha.');
       return; 
     }
 
-    navigation.navigate('Home'); 
+      navigation.navigate('Home'); 
   }
 
   return (
